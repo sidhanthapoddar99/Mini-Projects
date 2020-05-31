@@ -1,0 +1,84 @@
+   login: 17BCE0015   password: 17BCE0015
+   login: 17BCE0142   password: 17BCE0142
+   login: 17BCE0248   password: 1234
+   login: 17BCE0358   password: 12345
+   login: 17BCE0405   password: 17BCE0405
+   login: 17BCE0488   password: 17BCE0488
+   login: 17BCE2007   password: 2007
+   login: 17BCE2107   password: 2107
+   login: 17BCE2309   password: 17BCE2309
+   login: 17BCE2350   password: 12345
+   login: 17BCE2371   password: 17BCE2371
+   login: 17BCE2393   password: 17BCE2393
+
+   login: 17BEC0071   password: 0071
+   login: 17BEC0137   password: 0137
+   login: 17BEC0150   password: 123
+   login: 17BEC0266   password: 17BEC0266
+   login: 17BEC0385   password: 17bec0385
+   login: 17BEC0400   password: 123
+   login: 17BEC0481   password: 0481
+   login: 17BEC0504   password: 17BEC0504
+   login: 17BEC0697   password: 0697
+   login: 17BEC0901   password: 1234
+   login: 17BEC0065   password: 0065
+
+   login: 17BIT0075   password: 12345
+   login: 17BIT0383   password: 17BIT0383
+
+   login: 17BME0032   password: 17BME0032
+   login: 17BME0063   password: 17BME0063
+   login: 17BME0088   password: 12345
+   login: 17BME0204   password: 17bme0204
+   login: 17BME0220   password: 17BME0220
+   login: 17BME0241   password: 0241
+   login: 17BME0303   password: 0303
+   login: 17BME0368   password: abc
+   login: 17BME0424   password: 0424
+   login: 17BME0587   password: 12345
+   login: 17BME0613   password: 17BME0613
+   login: 17BME0761   password: 17BME0761
+   login: 17BME0801   password: 0801
+   login: 17BME0884   password: 17BME0884
+   login: 17BME0932   password: 0932
+   login: 17BME0948   password: 17BME0948
+   login: 17BME0972   password: 1234
+
+   login: 16BCE0019   password: 0019
+   login: 16BCE0051   password: 0051
+   login: 16BCE0063   password: 0063
+   login: 16BCE0110   password: 0110
+   login: 16BCE0163   password: abc
+   login: 16BCE0178   password: 0178
+   login: 16BCE0216   password: 0216
+   login: 16BCE0290   password: 1234
+   login: 16BCE0306   password: 1234
+   login: 16BCE0394   password: 0394
+   login: 16BCE0401   password: 0401
+   login: 16BCE0411   password: 0411
+   login: 16BCE0433   password: 0433
+   login: 16BCE0473   password: 473
+   login: 16BCE0477   password: 16BCE0477
+   login: 16BCE0499   password: 499
+   login: 16BCE0515   password: 0515
+   login: 16BCE0613   password: abc
+   login: 16BCE0627   password: 0627
+   login: 16BCE0710   password: 0710
+   login: 16BCE0772   password: 0772
+   login: 16BCE0833   password: 1234
+   login: 16BCE0876   password: 1234
+   login: 16BCE0898   password: 0898
+   login: 16BCE0910   password: 123
+   login: 16BCE0926   password: 0926
+   login: 16BCE0936   password: 0936
+   login: 16BCE2122   password: 2122
+   login: 16BCE2233   password: 2233
+   login: 16BCE2300   password: 2300
+   login: 16BCE2316   password: 16BCE2316
+   login: 16BCE2317   password: 16BCE2317
+
+
+
+
+
+ l

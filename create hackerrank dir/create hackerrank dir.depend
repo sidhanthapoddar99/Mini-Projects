@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1556737965 source:d:\user data\documents\source\others\codeblocks\create hackerrank dir\main.cpp
+	<iostream>
+	<conio.h>
+	<dir.h>
+	<process.h>
+	<stdio.h>
+	<bits/stdc++.h>
+	<string.h>
+	<fstream>
+

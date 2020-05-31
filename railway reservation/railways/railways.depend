@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1522958625 source:c:\users\sidhantha\desktop\new folder (2)\railways\main.cpp
+	<iostream>
+	<conio.h>
+	<fstream>
+	<process.h>
+	<string>
+	<cstring>
+	<stdio.h>
+	<stdlib.h>
+	<bits/stdc++.h>
+	<windows.h>
+
+1522958625 source:c:\users\sidhantha\desktop\new folder (2)\railways\adder.cpp
+	<iostream>
+	<string>
+

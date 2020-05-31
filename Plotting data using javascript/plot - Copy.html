@@ -1,0 +1,145 @@
+<html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="plotly-latest.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    </head>
+    <body>
+    <div class="navbar"><span>Real-Time Chart with Plotly.js</span></div>
+    <div class="wrapper">
+
+        <div id="mydiv"></div>
+
+        <p>Select local CSV File:</p>
+        <output id="out">
+            file contents will appear here
+        </output>
+        <script>
+
+
+          $(document).ready(function() {
+              $.ajax({
+                  type: "GET",
+                  url: "data.csv",
+                  dataType: "text",
+                  success: function(data) {processData(data);}
+               });
+          });
+          function processData(csv) {
+              var allTextLines = csv.split(/\r\n|\n/);
+              var lines = [];
+              var x1 = [];
+              var x2 = [];
+              var y = [];
+              for (var i=0; i<allTextLines.length; i++) {
+                  var data = allTextLines[i].split(',');
+                      // var tarr = [];
+                      // for (var j=0; j<data.length; j++) {
+                      //     tarr.push(data[j]);
+                      // }
+                      // lines.push(tarr);
+                      x1.push(parseInt(data[0]));
+                      x2.push(parseInt(data[1]));
+                       y.push(parseInt(data[2]));
+              }
+            console.log(x1);
+            plotGraph(x1,x2,y);
+          }
+          function errorHandler(evt) {
+            if(evt.target.error.name == "NotReadableError") {
+                alert("Canno't read file !");
+            }
+          }
+          function plotGraph(x1,x2,y1)
+          {
+            var trace1 = {
+              x: x1,
+              y: y1,
+              name: 'Solid1',
+              type: 'Line'
+
+            };
+
+            var trace2 = {
+              x: x2,
+              y: y1,
+              name: 'Solid',
+              type: 'Scatter + Lines'
+            };
+
+            var data = [trace1, trace2];
+
+            Plotly.newPlot('mydiv', data);
+
+          }
+
+          // function processData(allText) {
+          //     var record_num = 5;  // or however many elements there are in each row
+          //     var allTextLines = allText.split(/\r\n|\n/);
+          //     var entries = allTextLines[0].split(',');
+          //     var lines = [];
+
+          //     var headings = entries.splice(0,record_num);
+          //     while (entries.length>0) {
+          //         var tarr = [];
+          //         for (var j=0; j<record_num; j++) {
+          //             tarr.push(headings[j]+":"+entries.shift());
+          //         }
+          //         lines.push(tarr);
+    }
+    // alert(lines);
+}
+        
+    //              function handleFiles(files) {
+    //   // Check for the various File API support.
+    //   if (window.FileReader) {
+    //       // FileReader are supported.
+    //       getAsText(files[0]);
+    //   } else {
+    //       alert('FileReader are not supported in this browser.');
+    //   }
+    // }
+
+    // function getAsText(fileToRead) {
+    //   var reader = new FileReader();
+    //   // Read file into memory as UTF-8      
+    //   reader.readAsText(fileToRead);
+    //   // Handle errors load
+    //   reader.onload = loadHandler;
+    //   reader.onerror = errorHandler;
+    // }
+
+    // function loadHandler(event) {
+    //   var csv = event.target.result;
+    //   processData(csv);
+    // }
+
+    // function processData(csv) {
+    //     var allTextLines = csv.split(/\r\n|\n/);
+    //     var lines = [];
+    //     var x1 = [];
+    //     var x2 = [];
+    //     var y = [];
+    //     for (var i=0; i<allTextLines.length; i++) {
+    //         var data = allTextLines[i].split(',');
+    //             // var tarr = [];
+    //             // for (var j=0; j<data.length; j++) {
+    //             //     tarr.push(data[j]);
+    //             // }
+    //             // lines.push(tarr);
+    //             x1.push(parseInt(data[0]));
+    //     }
+    //   console.log(x1);
+    // }
+
+    // function errorHandler(evt) {
+    //   if(evt.target.error.name == "NotReadableError") {
+    //       alert("Canno't read file !");
+    //   }
+    // }
+
+        </script>
+    </div>
+    </body>
+</html>

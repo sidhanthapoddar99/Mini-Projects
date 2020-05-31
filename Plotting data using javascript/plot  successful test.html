@@ -1,0 +1,105 @@
+<html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="plotly-latest.min.js"></script>
+    </head>
+    <body>
+    <div class="navbar"><span>Real-Time Chart with Plotly.js</span></div>
+    <div class="wrapper">
+
+        <div id="mydiv"></div>
+
+        <p>Select local CSV File:</p>
+        <input id="csv" type="file">
+        <input type="button" value = "Show clock on top side" onclick="moveTop()"/>
+        <input type="file" id="csvFileInput" onchange="handleFiles(this.files)" accept=".csv">
+        <output id="out">
+            file contents will appear here
+        </output>
+        <script>
+        
+         function handleFiles(files) {
+              // Check for the various File API support.
+              if (window.FileReader) {
+                  // FileReader are supported.
+              } else {
+                  alert('FileReader are not supported in this browser.');
+              }
+            }
+            function handleFiles(files) {
+      // Check for the various File API support.
+      if (window.FileReader) {
+          // FileReader are supported.
+          getAsText(files[0]);
+      } else {
+          alert('FileReader are not supported in this browser.');
+      }
+    }
+
+    function getAsText(fileToRead) {
+      var reader = new FileReader();
+      // Read file into memory as UTF-8      
+      reader.readAsText(fileToRead);
+      // Handle errors load
+      reader.onload = loadHandler;
+      reader.onerror = errorHandler;
+    }
+
+    function loadHandler(event) {
+      var csv = event.target.result;
+      processData(csv);
+    }
+
+    function processData(csv) {
+        var allTextLines = csv.split(/\r\n|\n/);
+        var lines = [];
+        for (var i=0; i<allTextLines.length; i++) {
+            var data = allTextLines[i].split(';');
+                var tarr = [];
+                for (var j=0; j<data.length; j++) {
+                    tarr.push(data[j]);
+                }
+                lines.push(tarr);
+        }
+      console.log(lines);
+    }
+
+    function errorHandler(evt) {
+      if(evt.target.error.name == "NotReadableError") {
+          alert("Canno't read file !");
+      }
+    }
+                   // /*var url = "./data.csv";
+
+           //  var request = new XMLHttpRequest();  
+           //  request.open("GET", url, false);   
+           //  request.send(null);  
+           //  */
+           //  var csvData = new Array([]);
+           //  //var jsonObject = request.responseText.split(/\r?\n|\r/);
+            
+           //  function moveTop()
+           // { var jsonObject = document.getElementById("csv");
+           
+           //              readFile = function () {
+           //                  var reader = new FileReader();
+
+           //                  reader.onload = function () {
+           //                      document.getElementById('out').innerHTML = reader.result;
+           //                      };
+           //                  // start reading the file. When it is done, calls the onload event defined above.
+           //                  reader.readAsBinaryString(fileInput.files[0]);
+           //                   };
+           //                      console.log(readFile);
+           //          //fileInput.addEventListener('change', readFile);
+           //             // for (var i = 0; i < jsonObject.length; i++) {
+           //             //   csvData.push(jsonObject[i].split(','));
+           //             // }
+           //             // // Retrived data from csv file content
+           //             // console.log(csvData);
+           //         }
+
+        </script>
+    </div>
+    </body>
+</html>

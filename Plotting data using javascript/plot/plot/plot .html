@@ -1,0 +1,106 @@
+<html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="plotly-latest.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    </head>
+    <body>
+    
+    <div class="wrapper">
+        <h1>The Graph shown below is from a preloded csv in the folder named data.csv</h1>
+        <div id="mydiv"></div>
+        <h1>To plot your own graph select your csv</h1>
+        <p>Select local CSV File:</p>
+        <input type="file" id="csvFileInput" onchange="handleFiles(this.files)" accept=".csv">
+        <script>
+
+
+          $(document).ready(function() {
+              $.ajax({
+                  type: "GET",
+                  url: "data.csv",
+                  dataType: "text",
+                  success: function(data) {processData(data);}
+               });
+          });
+
+          function handleFiles(files) {
+              // Check for the various File API support.
+              if (window.FileReader) {
+                  // FileReader are supported.
+                  getAsText(files[0]);
+              } else {
+                  alert('FileReader are not supported in this browser.');
+              }
+            }
+
+          function getAsText(fileToRead) {
+            var reader = new FileReader();
+            // Read file into memory as UTF-8      
+            reader.readAsText(fileToRead);
+            // Handle errors load
+            reader.onload = loadHandler;
+            reader.onerror = errorHandler;
+          }
+
+          function loadHandler(event) {
+            var csv = event.target.result;
+            processData(csv);
+          }
+
+          function processData(csv) {
+              var allTextLines = csv.split(/\r\n|\n/);
+              var lines = [];
+              var  y1 = [];
+              var y2 = [];
+              var x = [];
+              for (var i=1; i<allTextLines.length; i++) {
+                  var data = allTextLines[i].split(',');
+                      // var tarr = [];
+                      // for (var j=0; j<data.length; j++) {
+                      //     tarr.push(data[j]);
+                      // }
+                      // lines.push(tarr);
+                      y1.push(parseFloat(data[2]));
+                      y2.push(parseFloat(data[1]));
+                       x.push(parseFloat(data[0]));
+              }
+            //console.log([x1,x2]);
+            plotGraph(y1,y2,x);
+          }
+
+          function errorHandler(evt) {
+            if(evt.target.error.name == "NotReadableError") {
+                alert("Canno't read file !");
+            }
+          }
+          function plotGraph(y1,y2,x1)
+          {
+            var trace1 = {
+              x: x1,
+              y: y1,
+              name: 'Value1',
+              type: 'Line'
+
+            };
+
+            var trace2 = {
+              x: x1,
+              y: y2,
+              name: 'Value2',
+              type: 'Scatter + Lines'
+            };
+
+            var data = [trace1, trace2];
+
+            Plotly.newPlot('mydiv', data);
+
+          }
+
+          
+
+        </script>
+    </div>
+    </body>
+</html>

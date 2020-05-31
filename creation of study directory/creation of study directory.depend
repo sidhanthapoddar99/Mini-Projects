@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1556440775 source:d:\user data\documents\source\others\codeblocks\creation of study directory\main.cpp
+	<iostream>
+	<conio.h>
+	<dir.h>
+	<process.h>
+	<stdio.h>
+	<bits/stdc++.h>
+
